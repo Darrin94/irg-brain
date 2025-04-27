@@ -7,18 +7,17 @@ app.use(express.json());
 
 // Routes
 const smsRoutes = require('./routes/smsRoutes');
-app.use('/api', smsRoutes);
-
 const chatRoutes = require('./routes/chatRoutes');
-app.use('/api', chatRoutes);
 
+app.use('/api', smsRoutes);
+app.use('/api', chatRoutes);
 
 // Default route
 app.get('/', (req, res) => {
     res.send('IRG Brain is alive 🚀');
 });
 
-// Server listen
+// Server start
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

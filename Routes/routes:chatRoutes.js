@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { chatWithAdvisor } = require('../services/openAIService');
 
-// Example: POST /chat
+// POST /api/chat
 router.post('/chat', async (req, res) => {
   const { message } = req.body;
 
